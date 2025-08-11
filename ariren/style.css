@@ -1,0 +1,751 @@
+:root{
+    --white: #fff;
+    --white-dark: #dbe7f3;
+    --text-color: #333;
+    --dark: #0F172B;
+    --light-blue: #0d6efd;
+    --dark-blue: #0a58ca;
+    --red: #ef233c;
+    --green: #00E77F;
+
+    /* border */
+    --border-image: 1px solid;
+
+    /* box-shadow */
+    --box-shadow: 0 7px 25px rgba(0, 0, 0, 0.3);
+
+    /* transition */
+    --text-transition: all 0.3s ease;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #0c0b09; /* Background color for the entire website, including individual sections */
+  --default-color: rgba(255, 255, 255, 0.7); /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #cda45e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #29261f; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #0c0b09; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-hover-color: #cda45e; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #29261f; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #29261f; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #cda45e; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #29261f;
+  --surface-color: #464135;
+}
+
+.dark-background {
+  --background-color: #000000;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #1a1a1a;
+  --contrast-color: #ffffff;
+}
+
+
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.sitename{
+  color: var(--accent-color);
+}
+
+/* ================ Button ================= */
+
+/* WhatsApp Button Container */
+.whatsapp-button {
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    left: 15px;
+    bottom: 30px;
+  }
+
+  .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+
+
+
+/* ============== Navbar =============== */
+ 
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand img {
+    max-height: 70px;
+}
+
+
+.navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 10px 0px;
+    color: #696E77;
+    font-weight: 400;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--light-blue);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-brand img {
+        max-height: 55px;
+        margin-left: 2rem;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        padding-left: 30px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        outline: none;
+        margin-top: 0;
+        top: 150%;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/* ================ HEADER ================== */
+
+
+
+
+
+/* ================ ABOUT ================= */
+
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  gap: 40px;
+}
+
+.countdown-section {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+#countdown {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#countdown div {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+#countdown span {
+  font-size: 2.5em;
+  display: block;
+}
+
+#countdown label {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*=================== CLIENTS REVIEWS ===================*/
+
+
+
+
+
+/* =============== SERVICE ===============*/
+
+
+/*--------------------------------------------------------------
+# Tabs Section
+--------------------------------------------------------------*/
+.tabs .service-item .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 4px;
+  position: relative;
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.tabs .service-item .service-contents h3 {
+  font-size: 16px;
+  color: var(--heading-color);
+}
+
+.tabs .service-item.link {
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+}
+
+.tabs .service-item.link .service-contents {
+  color: var(--default-color);
+}
+
+.tabs .service-item.link .service-contents *:last-child {
+  margin-bottom: 0;
+}
+
+.tabs .service-item.link:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+}
+
+.tabs .service-item.link:hover .service-icon {
+  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+}
+
+.tabs .service-item.link.active {
+  background: var(--surface-color);
+}
+
+.tabs .service-item.link.active .service-icon {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/*--------------------------------------------------------------
+# Services 2 Section
+--------------------------------------------------------------*/
+.services-2 .content-subtitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+  color: var(--default-color);
+}
+
+.services-2 .content-title {
+  color: var(--heading-color);
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.services-2 p {
+  line-height: 1.7;
+  color: var(--default-color);
+}
+
+.services-2 .lead {
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--default-color);
+}
+
+.services-2 .btn-get-started {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 30px;
+  padding: 8px 30px;
+  border: 2px solid transparent;
+  transition: 0.3s all ease-in-out;
+  font-size: 14px;
+}
+
+.services-2 .btn-get-started:hover {
+  border-color: var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.services-2 .services-item .services-icon {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.services-2 .services-item .services-icon i {
+  font-size: 48px;
+}
+
+.services-2 .services-item h3 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--heading-color);
+}
+
+
+
+
+
+
+
+/* ================= Facts ================== */
+
+
+
+
+
+
+
+/* =================== Product ================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* NAVIGATION SECTION FOR USERS DIRECTIONS ON HOW TO NAVIGATE WEBSITE  */
+    
+    .notice-banner {
+        background-color: #fffae6;
+        color: #333;
+        padding: 1rem 1.5rem;
+        border-bottom: 2px solid var(--light-blue);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .notice-text {
+      flex: 1 1 70%;
+      font-size: 1rem;
+    }
+
+    .notice-text strong {
+      color: var(--light-blue);
+    }
+
+    .dismiss-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.3s ease;
+    }
+
+    .dismiss-btn:hover {
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .notice-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .notice-text {
+        margin-bottom: 0.5rem;
+      }
+
+      .dismiss-btn {
+        align-self: flex-end;
+      }
+    }
+
+
+
+/* WhatsApp Button Container */
+.whatsapp-button {
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    left: 15px;
+    bottom: 30px;
+  }
+
+  .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+
+/** ================ MENU SECTION ============= */
+
+
+/*--------------------------------------------------------------
+# Menu Section
+--------------------------------------------------------------*/
+.menu {
+  background-color: color-mix(in srgb, var(--background-color) 90%, white 5%);
+}
+
+.menu .menu-filters {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.menu .menu-filters li {
+  color: var(--default-color);
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 12px 10px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  transition: all ease-in-out 0.3s;
+  font-family: var(--heading-font);
+}
+
+.menu .menu-filters li:hover,
+.menu .menu-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.menu .menu-filters li:last-child {
+  margin-right: 0;
+}
+
+.menu .menu-item {
+  margin-top: 50px;
+  position: relative;
+}
+
+.menu .menu-img {
+  width: 80px;
+  border-radius: 50%;
+  float: left;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.menu .menu-content {
+  margin-left: 95px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu .menu-content::after {
+  content: "......................................................................" "...................................................................." "....................................................................";
+  position: absolute;
+  left: 20px;
+  right: 0;
+  top: -4px;
+  z-index: 1;
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.menu .menu-content a {
+  color: var(--heading-color);
+  background: var(--background-color);
+  padding-right: 10px;
+  position: relative;
+  z-index: 3;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.menu .menu-content a:hover {
+  color: var(--accent-color);
+}
+
+.menu .menu-content span {
+  background: var(--background-color);
+  color: var(--accent-color);
+  position: relative;
+  z-index: 3;
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+.menu .menu-ingredients {
+  margin-left: 95px;
+  font-style: italic;
+  font-size: 14px;
+  font-family: var(--nav-font);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+
+
+
+/** ================== FOOTER ================ */
+
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .footer-main-contact{
+  color: var(--white-dark);
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
